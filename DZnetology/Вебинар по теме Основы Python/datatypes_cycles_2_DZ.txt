@@ -1,0 +1,66 @@
+Здание 1
+
+ids = {'user1': [213, 213, 213, 15, 213], 
+       'user2': [54, 54, 119, 119, 119], 
+       'user3': [213, 98, 98, 35]}
+
+values = ids.values()
+s=set()
+for lst1 in values:
+    for i in lst1:
+        s.add(i)
+print(s)
+
+Задание 2
+
+queries = [
+    'смотреть сериалы онлайн',
+    'новости спорта',
+    'афиша кино',
+    'курс доллара',
+    'сериалы этим летом',
+    'курс по питону',
+    'сериалы про спорт',
+]
+
+
+quantity = len(queries)
+print(quantity)
+two_words = []
+three_words = []
+
+for word in queries:
+    #print(len(word.split(' ')))
+    if len(word.split(' ')) == 2:
+        #two_words +=1
+        two_words.append(word)
+    else:
+        #three_words +=1
+        three_words.append(word)
+         
+print("Поисковых запросов, содержащих 2 слов(а): ", round((len(two_words)/quantity)*100,2),'%')
+print("Поисковых запросов, содержащих 3 слов(а): ", round((len(three_words)/quantity)*100,2),'%')
+
+
+Задание 3
+
+
+results = {
+    'vk': {'revenue': 103, 'cost': 98},
+    'yandex': {'revenue': 179, 'cost': 153},
+    'facebook': {'revenue': 103, 'cost': 110},
+    'adwords': {'revenue': 35, 'cost': 34},
+    'twitter': {'revenue': 11, 'cost': 24},
+}
+
+
+for comp, info in results.items():
+    info['ROI'] = round((info['revenue'] / info['cost'] - 1 ) * 100,2)  
+results
+
+Задание 4
+
+stats = {'facebook': 55, 'yandex': 115, 'vk': 120, 'google': 99, 'email': 42, 'ok': 98}
+
+max_key = max(stats, key=lambda i: stats[i])
+print("Максимальный объем продаж на рекламном канале: " + max_key)
